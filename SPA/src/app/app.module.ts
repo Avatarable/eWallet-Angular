@@ -16,9 +16,6 @@ import { NgProgressModule } from 'ngx-progressbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertModule } from 'ngx-alerts';
 
-import { AnimationItem } from "lottie-web";
-import { defineLordIconElement } from "lord-icon-element";
-
 
 @NgModule({
   declarations: [
