@@ -1,0 +1,77 @@
+<!-- Landing Section -->
+<section class="landing">
+    <div class="container">
+      <div class="text">
+        <span>eWallet wey sapa no deh catch!</span>
+        <h1 class="bigger-text">Manage your money from your room.</h1>
+        <p>Waller makes it easy for you to make payments through easily without having to leave
+            your house. We use the most advanced systems, so security is guaranteed.
+        </p>
+        <div>
+          <a [routerLink]="['/auth/login']" class="btn btn-primary">
+            <lord-icon
+                src="https://cdn.lordicon.com/qhviklyi.json"
+                trigger="loop"
+                colors="primary:#121331,secondary:#08a88a"
+                style="width:35px;height:35px">
+            </lord-icon>  
+            Get Started</a>
+        </div>
+      </div>
+      <div class="image">
+        <!-- <img src="../../assets/img/Wavy_Bus-29_Single-05.jpg" alt="eWallet Illustration"> -->
+
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_z6scuqaw.json" 
+            background="transparent"  speed="1"  
+            style="width: 300px; height: 300px;"  loop autoplay>
+        </lottie-player>
+        
+      </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section>
+    <div class="container">
+        <div class="row statement">
+            <div class="col-4 big-text">Our Value</div>
+            <div class="col-8">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae necessitatibus nisi dignissimos.</div>
+        </div>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+              <div class="feature-icon bg-primary bg-gradient">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <h2>Efficiency</h2>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            </div>
+            <div class="feature col">
+              <div class="feature-icon bg-primary bg-gradient">
+                <lord-icon
+                    src="https://cdn.lordicon.com/gqdnbnwt.json"
+                    trigger="hover"
+                    colors="primary:#ec407a,secondary:#ec407a">
+                </lord-icon>
+              </div>
+              <h2>Featured title</h2>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            </div>
+            <div class="feature col">
+              <div class="feature-icon bg-primary bg-gradient">
+                <img src="../../assets/img/equity.gif" alt="">
+              </div>
+              <h2>Security</h2>
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            </div>
+          </div>
+   
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        
+    </div>
+</section>
+
+<app-auth-buttons></app-auth-buttons>
