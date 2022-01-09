@@ -1,6 +1,7 @@
 export interface IUser {
-  username: string;
+  firstname: string;
+  lastname: string;
   email: string;
   role: string;
-  jobTitle: string;
+  accountType: string;
 }

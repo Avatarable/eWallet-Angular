@@ -1,16 +1,24 @@
-<div class="jumbotron mt-4">
-	<h1 class="display-4">Admin Page</h1>
-	<p>Only administrators can view data on this page
-	</p>
+<div class="container-fluid">
+	<div class="row fullheight">
+	  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+		<app-sidebar></app-sidebar>
+	  </nav>
 
-	<hr class="my-4">
-	<p>Some secret data that only admins can see below</p>
-
-	<a class="btn btn-danger" routerLink=""><i class="fas fa-home"></i> Home</a>
-
-	<h4>Top scret stuff for Admin Developers</h4>
-	<div *ngIf="secrets$ | async as secrets">
-		<p>Role: {{secrets.role}}</p>
-		<p>Claim: {{secrets.claim}}</p>
+  
+		<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+			<h1 class="h2">Dashboard</h1>
+			<div class="btn-toolbar mb-2 mb-md-0">
+				<div class="btn-group me-2">
+				<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+				<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+				</div>
+				<button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+				<span data-feather="calendar"></span>
+				This week
+				</button>
+			</div>
+			</div>
+		</main>
 	</div>
 </div>

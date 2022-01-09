@@ -15,29 +15,32 @@ export class AuthService {
   helper = new JwtHelperService();
 
   currentUser: IUser = {
-    username: null,
+    firstname: null,
+    lastname: null,
     email: null,
     role: null,
-    jobTitle: null
+    accountType: null
   };
   constructor(private http: HttpClient) {}
 
   login(model: any): Observable<IUser> {
-    return this.http.post(this.baseUrl + 'identity/login', model).pipe(
+    return this.http.post(this.baseUrl + 'api/Auth/login', model).pipe(
       map((response: any) => {
-        const decodedToken = this.helper.decodeToken(response.token);
+        console.log(response);
+        const decodedToken = this.helper.decodeToken(response.data.token);
                       
         // this.isLoggedIn = response.result.succeeded;
         // this.currentUser.username = response.username;
         // this.currentUser.email = response.email;
 
         //getting user info from token
-        this.currentUser.username = decodedToken.given_name;
+        this.currentUser.firstname = decodedToken.unique_name.split(" ")[0];
+        this.currentUser.lastname = decodedToken.unique_name.split(" ")[1];
         this.currentUser.email = decodedToken.email;
-        this.currentUser.jobTitle = decodedToken.jobTitle;
+        this.currentUser.accountType = decodedToken.AccountType;
         this.currentUser.role = decodedToken.role;
 
-        localStorage.setItem('token', response.token);
+        localStorage.setItem('token', response.data.token);
         
         return this.currentUser;
       })
@@ -51,19 +54,20 @@ export class AuthService {
 
   logout() {
     this.currentUser = {
-      username: null,
+      firstname: null,
+      lastname: null,
       email: null,
       role: null,
-      jobTitle: null
+      accountType: null
     };
     localStorage.removeItem('token');
   }
 
   register(model: any){
-    return this.http.post(this.baseUrl + 'identity/register', model);
+    return this.http.post(this.baseUrl + 'api/users/register', model);
   }
 
   confirmEmail(model: any) {    
-    return this.http.post(this.baseUrl + 'identity/confirmemail', model);
+    return this.http.post(this.baseUrl + 'api/users/confirm-email', model);
   }
 }

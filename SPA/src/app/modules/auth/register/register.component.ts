@@ -10,15 +10,17 @@ import { AuthService } from '../resources/auth.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  roleOptions: string[] = ['Administrator', 'Manager'];
-  developerType: string[] = ['Developer', 'Designer'];
+  roleOptions: string[] = ['Admin', 'Regular'];
+  accountTypes: string[] = ['Noob', 'Elite'];
 
   model: any = {
-    username: null,
+    firstname: null,
+    lastname: null,
     email: null,
     password: null,
-    role: 'Administrator',
-    jobtitle: 'Developer',
+    confirmPassword: null,
+    role: 'Regular',
+    accountType: 'Noob',
   };
   constructor(
     private progressService: ProgressbarService,
@@ -54,6 +56,14 @@ export class RegisterComponent implements OnInit {
   }
 
   claimChange(value) {
-    this.model.jobtitle = value;
+    this.model.accountType = value;
+  }
+
+  isAdmin(): boolean {
+    return this.authService.currentUser.role == 'Admin' ? true : false;
+  }
+
+  isRegular(): boolean {
+    return this.authService.currentUser.accountType == 'Regular' ? true : false;
   }
 }

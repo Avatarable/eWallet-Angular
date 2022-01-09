@@ -20,10 +20,10 @@ export class HeaderComponent implements OnInit {
   }
 
   isAdmin(): boolean {
-    return this.authService.currentUser.role == 'Administrator' ? true : false;
+    return this.authService.currentUser.role == 'Admin' ? true : false;
   }
 
-  isManager(): boolean {
-    return this.authService.currentUser.role == 'Manager' ? true : false;
+  isRegular(): boolean {
+    return this.authService.currentUser.role == 'Regular' ? true : false;
   }
 }

@@ -5,37 +5,41 @@ import { ProgressbarService } from 'src/app/shared/services/progressbar.service'
 import { AlertService } from 'ngx-alerts';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
+  userEmail: string;
   constructor(
     private authService: AuthService,
     private progressService: ProgressbarService,
     private alertService: AlertService
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+  }
 
   onSubmit(f: NgForm) {
-    this.alertService.info('Check login information');
+    this.alertService.info('Validating email');
     this.progressService.startLoading();
 
     const loginObserver = {
       next: (x) => {
         this.progressService.setSuccess();
-        this.alertService.success('Welcome back ' + x.firstname);
+        this.alertService.success('Check your email for reset link');
         this.progressService.completeLoading();
       },
       error: (err) => {
         this.progressService.setFailure();
         console.log(err);
-        this.alertService.danger('Unable to Login');
+        this.alertService.danger('Invalid email');
         this.progressService.completeLoading();
       }
     }
+
     // call service
-    this.authService.login(f.value).subscribe(loginObserver);
+    //this.authService.forgotPassword(this.userEmail).subscribe(loginObserver);
   }
+
 }

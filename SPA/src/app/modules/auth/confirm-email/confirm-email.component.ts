@@ -22,7 +22,7 @@ export class ConfirmEmailComponent implements OnInit {
 
   ngOnInit() {
     this.urlParams.token = this.route.snapshot.queryParamMap.get('token');
-    this.urlParams.userid = this.route.snapshot.queryParamMap.get('userid');
+    this.urlParams.email = this.route.snapshot.queryParamMap.get('email');
     this.confirmEmail();
   }
 

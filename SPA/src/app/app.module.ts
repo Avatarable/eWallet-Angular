@@ -15,6 +15,9 @@ import { NgProgressModule } from 'ngx-progressbar';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertModule } from 'ngx-alerts';
+import { ConfirmEqualValidatorDirective } from './shared/directives/confirm-equal-validator.directive';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { AuthComponent } from './modules/auth/auth.component';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { AlertModule } from 'ngx-alerts';
     HeaderComponent,
     FooterComponent,
     CourseListComponent,
+    ConfirmEqualValidatorDirective,
+    SidebarComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
