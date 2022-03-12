@@ -11,9 +11,6 @@
 			<li class="nav-item" *ngIf="isRegular()">
 				<a class="nav-link" [routerLink]="['manager']" routerLinkActive="Manager"><i class="fas fa-user-cog"></i> Regular</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" [routerLink]="['public']" routerLinkActive="router-link-active"><i class="fas fa-users"></i> Public</a>
-			</li>
 		</ul>
 		<app-auth-links></app-auth-links>
 	</div>
