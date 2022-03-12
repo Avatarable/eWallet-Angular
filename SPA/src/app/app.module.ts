@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { ManagerComponent } from './pages/manager/manager.component';
-import { PublicComponent } from './pages/public/public.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { CourseListComponent } from './shared/components/course-list/course-list.component';
@@ -26,7 +25,6 @@ import { AuthComponent } from './modules/auth/auth.component';
     HomeComponent,
     AdminComponent,
     ManagerComponent,
-    PublicComponent,
     HeaderComponent,
     FooterComponent,
     CourseListComponent,
